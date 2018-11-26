@@ -11,6 +11,8 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	if isGameOver:
+		return
 	get_input(delta)
 
 func get_input(delta):
@@ -46,7 +48,6 @@ func add_enemy():
 	var spawn_position = Vector2(1200, 525);
 	var enemy = Enemy.instance()
 	var random_speed = randi()%100+100
-	print("random_speed:", random_speed)
 	enemy.speed = random_speed
 	enemy.set_position(spawn_position)
 	enemy.connect("dead", self, "on_enemy_hit")
@@ -76,7 +77,7 @@ func reset_spit_impulse():
 	
 func handle_game_over():
 	if isGameOver:
-		return false
+		return
 	$Lhama.queue_free()
 	$HUD.show_game_over()
 	isGameOver = true
