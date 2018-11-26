@@ -17,18 +17,18 @@ __meta__ = {
 Spit = ExtResource( 2 )
 Enemy = ExtResource( 3 )
 
-[node name="Wave" type="Timer" parent="." index="0"]
+[node name="Lhama" parent="." index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 50, 531 )
+
+[node name="HUD" parent="." index="1" instance=ExtResource( 5 )]
+
+[node name="Wave" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = true
-
-[node name="Lhama" parent="." index="1" instance=ExtResource( 4 )]
-
-position = Vector2( 50, 531 )
-
-[node name="HUD" parent="." index="2" instance=ExtResource( 5 )]
 
 [connection signal="timeout" from="Wave" to="." method="_on_Wave_timeout"]
 

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Playground.gd" type="Script" id=1]
+[ext_resource path="res://Spit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Lhama.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+
+[node name="Playground" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_horizontal_guides_": [ 490.0 ],
+"_edit_vertical_guides_": [ 171.2 ]
+}
+Spit = ExtResource( 2 )
+
+[node name="Wave" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = true
+
+[node name="Lhama" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 50, 531 )
+
+[node name="HUD" parent="." index="2" instance=ExtResource( 4 )]
+
+[connection signal="timeout" from="Wave" to="." method="_on_Wave_timeout"]
+
+
