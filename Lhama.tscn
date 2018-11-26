@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Lhama.gd" type="Script" id=1]
+[ext_resource path="res://assets/chararacters/foe_pink.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.95402, 128 )
+
+[node name="Lhama" type="KinematicBody2D" groups=[
+"player",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.300001, 1.20002 )
+scale = Vector2( 4.67148, 0.526718 )
+shape = SubResource( 1 )
+
+[node name="Head" type="Sprite" parent="." index="2"]
+
+modulate = Color( 0.28042, 0.798451, 0.957031, 1 )
+show_behind_parent = true
+position = Vector2( -4, -104 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+offset = Vector2( 130, -120 )
+_sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
+
+
