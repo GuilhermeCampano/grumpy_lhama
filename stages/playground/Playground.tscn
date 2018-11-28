@@ -1,9 +1,14 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Playground.gd" type="Script" id=1]
-[ext_resource path="res://Spit.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Lhama.tscn" type="PackedScene" id=3]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://stages/playground/Playground.gd" type="Script" id=1]
+[ext_resource path="res://player/Spit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/Lhama.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stages/HUD.tscn" type="PackedScene" id=4]
+
+
+
+
+
 
 [node name="Playground" type="Node2D"]
 

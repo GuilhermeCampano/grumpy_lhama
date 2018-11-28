@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://stages/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/roboto_50.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/font/roboto_30.tres" type="DynamicFont" id=3]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -94,16 +95,32 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 use_top_left = false
 
-[node name="GameOver" type="Label" parent="CenterContainer" index="0"]
+[node name="GameOverWrapper" type="VBoxContainer" parent="CenterContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 377.0
-margin_top = 270.0
+margin_top = 258.0
 margin_right = 646.0
-margin_bottom = 330.0
+margin_bottom = 342.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="GameOver" type="Label" parent="CenterContainer/GameOverWrapper" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 269.0
+margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -119,6 +136,34 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
+[node name="TryAgain" type="Button" parent="CenterContainer/GameOverWrapper" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 269.0
+margin_bottom = 106.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Try Again!"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
 [connection signal="timeout" from="SpitRecover" to="." method="_on_SpitRecover_timeout"]
+
+[connection signal="pressed" from="CenterContainer/GameOverWrapper/TryAgain" to="." method="_on_TryAgain_pressed"]
 
 

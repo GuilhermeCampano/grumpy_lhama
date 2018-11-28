@@ -23,7 +23,10 @@ func update_spit_meter():
 	$HBoxContainer/SpitCounter.set_text(str(spit_counter_current, "/", spit_counter_max))
 
 func show_game_over():
-	$CenterContainer/GameOver.show()
+	$CenterContainer/GameOverWrapper.show()
 
 func hide_game_over():
-	$CenterContainer/GameOver.hide()
+	$CenterContainer/GameOverWrapper.hide()
+
+func _on_TryAgain_pressed():
+	get_tree().change_scene("res://TitleScreen.tscn")
