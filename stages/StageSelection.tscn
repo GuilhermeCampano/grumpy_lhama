@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://stages/StageSelection.gd" type="Script" id=1]
-[ext_resource path="res://assets/font/roboto_30.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/font/roboto_50.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/font/roboto_30.tres" type="DynamicFont" id=3]
 
-[node name="StageSelection" type="Container"]
+[node name="StageSelection" type="Container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -28,9 +29,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -512.0
-margin_top = -10.0
+margin_top = -9.0
 margin_right = 512.0
-margin_bottom = 10.0
+margin_bottom = 143.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -39,15 +40,39 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Training" type="Button" parent="StagesWrapper" index="0"]
+[node name="SelectStageLabel" type="Label" parent="StagesWrapper" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 352.0
+margin_top = 1.0
+margin_right = 671.0
+margin_bottom = 61.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Select a stage"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "Size Flags", "custom_fonts", "custom_styles" ]
+
+[node name="Training" type="Button" parent="StagesWrapper" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 449.0
+margin_top = 64.0
 margin_right = 574.0
-margin_bottom = 42.0
+margin_bottom = 106.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -55,7 +80,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -65,16 +90,16 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect", "Size Flags", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Stage1" type="Button" parent="StagesWrapper" index="1"]
+[node name="Stage1" type="Button" parent="StagesWrapper" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 455.0
-margin_top = 46.0
+margin_top = 111.0
 margin_right = 569.0
-margin_bottom = 88.0
+margin_bottom = 153.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -82,7 +107,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
