@@ -17,8 +17,6 @@ func get_input(delta):
 		reset_spit_impulse()
 
 func add_spit():
-	if $HUD.spit_counter_current <= 0:
-		return
 	var offset = Vector2(0, 0)
 	var spit = Spit.instance()
 	var spit_position = Vector2(170, 490)
@@ -30,7 +28,6 @@ func add_spit():
 	spit.set_position(spit_position)
 	spit.apply_impulse(offset, magnitude)
 	add_child(spit)
-	$HUD.spit_consume()
 
 func update_spit_impulse():
 	spit_impulse += impulse_per_tick;
@@ -40,3 +37,6 @@ func update_spit_impulse():
 func reset_spit_impulse():
 	spit_impulse = 0
 	$Lhama.reset_head()
+
+func _on_Exit_pressed():
+	get_tree().change_scene("res://stages/StageSelection.tscn")
